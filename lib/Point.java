@@ -5,13 +5,10 @@ public class Point{
     private double y;
     private static int count=0;
     public Point(){
-         this.x=0;
-         this.y=0;
-         increseCount();
+         this(0,0);
     }
     public Point(double x,double y){
-          this.x=x;
-          this.y=y;
+          setX(x);setY(y);
           increseCount();
     }
     public double getX(){
@@ -30,21 +27,18 @@ public class Point{
         this.y=y;
     }
   
-    public void setCount(int count){
-       this.count=count;
+    public static void setCount(int count){
+       Point.count=count;
     }
     public double distance(){
-         double d=(x*x)+(y*y);
-         return Math.sqrt(d);
-         
+        return distance(0,0);
     }
     public double distance(double x2,double y2){
-            double d=(Math.pow((x-x2), 2))+(Math.pow((y-y2), 2));
-            return Math.sqrt(d);
+            return Math.sqrt((Math.pow((x-x2), 2)+Math.pow((y-y2), 2)));
     }
     public double distance(Point p){
-        double d=(Math.pow((x-p.x), 2))+(Math.pow((y-p.y), 2));
-         return Math.sqrt(d);
+         return distance(p.x,p.y);
+
     }
     public void increseCount(){
             count++;

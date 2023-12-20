@@ -10,6 +10,11 @@ public class Main{
        System.out.println(b.distance(10, 100));
        System.out.println(Point.getCount());
       
-       
+       MoveablePoint c=new MoveablePoint(25,60,5);
+       System.out.println(c.toString());
+       c.Forward();
+       System.out.println(c.toString());
+       c.Backward();
+      System.out.println(c.toString());
       }
 }
